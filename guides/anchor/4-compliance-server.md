@@ -95,7 +95,7 @@ In the server configuration file, there are three callback URLs, much like those
 
     ```js
     app.post('/compliance/fetch_info', function (request, response) {
-      var addressParts = response.body.address.split('*');
+      var addressParts = request.body.address.split('*');
       var friendlyId = addressParts[0];
 
       // You need to create `accountDatabase.findByFriendlyId()`. It should look
